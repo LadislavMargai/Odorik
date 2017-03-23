@@ -8,5 +8,18 @@
   },
   "frameworks": {
     "netstandard1.3": {}
+  },
+  "packOptions": {
+    "owners": [ "Ladislav Margai" ],
+    "files": {
+      "mappings": {
+        "lib\\netstandard1.3": {
+          "includeFiles": [
+            "..\\Odorik.Models\\bin\\Release\\Odorik.Models.dll",
+            "..\\Odorik.Models\\bin\\Release\\Odorik.Models.xml"
+          ]
+        }
+      }
+    }
   }
 }
