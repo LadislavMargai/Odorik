@@ -4,13 +4,24 @@
     "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
     "NETStandard.Library": "1.6.0",
     "Newtonsoft.Json": "10.0.1",
-    "System.Net.Requests": "4.3.0"
+    "System.Net.Requests": "4.3.0",
+    "System.Net.Http": "4.3.0"
   },
   "frameworks": {
     "netstandard1.3": {}
   },
   "packOptions": {
+    "summary": "API for communicating with Odorik VOIP gateway",
+    "tags": [ "Odorik.cz", "Odorik", "Odorik API", "Odorik SDK" ],
     "owners": [ "Ladislav Margai" ],
+    "releaseNotes": "Initial release",
+    "projectUrl": "https://github.com/LadislavMargai/Odorik",
+    "licenseUrl": "https://github.com/LadislavMargai/Odorik/blob/master/LICENSE",
+    "requireLicenseAcceptance": false,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/LadislavMargai/Odorik"
+    },
     "files": {
       "mappings": {
         "lib\\netstandard1.3": {
@@ -22,4 +33,4 @@
       }
     }
   }
-}
+  }
