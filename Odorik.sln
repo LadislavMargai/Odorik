@@ -11,8 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odorik.Tests", "Odorik.Test
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|Any CPU = Debug|AnyCPU
+		Release|Any CPU = Release|AnyCPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
