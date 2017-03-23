@@ -10,19 +10,23 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odorik.Tests", "Odorik.Tests\Odorik.Tests.csproj", "{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{185B129A-3056-4A04-BC79-E4F80360BF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{185B129A-3056-4A04-BC79-E4F80360BF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{185B129A-3056-4A04-BC79-E4F80360BF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{185B129A-3056-4A04-BC79-E4F80360BF96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{3EAC3EC0-27A1-488E-B1D4-6680648771BB}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{185B129A-3056-4A04-BC79-E4F80360BF96}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{185B129A-3056-4A04-BC79-E4F80360BF96}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{185B129A-3056-4A04-BC79-E4F80360BF96}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{185B129A-3056-4A04-BC79-E4F80360BF96}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{D3F28DCF-20DD-40B7-A1F2-4D8A35D11E00}.Release|AnyCPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
