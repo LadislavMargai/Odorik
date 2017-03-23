@@ -21,9 +21,9 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Odorik\bin\Release\Odorik.dll" target="lib\netstandard1.3\Odorik.dll" />
-		<file src="Odorik\bin\Release\Odorik.xml" target="lib\netstandard1.3\Odorik.xml" />
-        <file src="Odorik.Models\bin\Release\Odorik.Models.dll" target="lib\netstandard1.3\Odorik.Models.dll" />
-        <file src="Odorik.Models\bin\Release\Odorik.Models.xml" target="lib\netstandard1.3\Odorik.Models.xml" />
+        <file src="bin\Release\Odorik.dll" target="lib\netstandard1.3\Odorik.dll" />
+		<file src="bin\Release\Odorik.xml" target="lib\netstandard1.3\Odorik.xml" />
+        <file src="..\Odorik.Models\bin\Release\Odorik.Models.dll" target="lib\netstandard1.3\Odorik.Models.dll" />
+        <file src="..\Odorik.Models\bin\Release\Odorik.Models.xml" target="lib\netstandard1.3\Odorik.Models.xml" />
     </files>
 </package>
