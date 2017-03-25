@@ -1,12 +1,19 @@
 ﻿using System;
+
 using Newtonsoft.Json;
 
 using Odorik.Infrastructure;
 
 namespace Odorik.Services
 {
+    /// <summary>
+    /// Base class for all Odorik services.
+    /// </summary>
     public abstract class BaseService
     {
+        /// <summary>
+        /// Odorik credentials.
+        /// </summary>
         protected readonly IOdorikCredentials Credentials;
 
 
@@ -26,7 +33,7 @@ namespace Odorik.Services
 
 
         /// <summary>
-        /// Deserialize <paramref name="resultString"/> to object specified by <typeparam name="T"></typeparam>
+        /// Deserialize <paramref name="resultString"/> to object.
         /// </summary>
         /// <typeparam name="T">Object type.</typeparam>
         /// <param name="resultString">Result string to process.</param>

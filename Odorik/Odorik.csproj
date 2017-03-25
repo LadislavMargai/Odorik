@@ -53,9 +53,12 @@
     <Compile Include="Infrastructure\OdorikConfiguration.cs" />
     <Compile Include="Infrastructure\OdorikException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IBalanceService.cs" />
     <Compile Include="Services\BalanceService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\ISmsService.cs" />
     <Compile Include="Services\SmsService.cs" />
+    <Compile Include="Services\ISpeedDialService.cs" />
     <Compile Include="Services\SpeedDialService.cs" />
   </ItemGroup>
   <ItemGroup>

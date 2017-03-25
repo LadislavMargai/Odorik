@@ -7,7 +7,10 @@ using Odorik.Models.Sms;
 
 namespace Odorik.Services
 {
-    public class SmsService : BaseService
+    /// <summary>
+    /// SMS service.
+    /// </summary>
+    public class SMSService : BaseService, ISMSService
     {
         #region "API resources"
 
@@ -25,7 +28,7 @@ namespace Odorik.Services
         /// Constructor. If are not specified <paramref name="credentials"/>, they are retrieved from <see cref="OdorikConfiguration.Credentials" />. 
         /// </summary>
         /// <param name="credentials">Credentials.</param>
-        public SmsService(IOdorikCredentials credentials = null) : base(credentials) { }
+        public SMSService(IOdorikCredentials credentials = null) : base(credentials) { }
         
 
         /// <summary>

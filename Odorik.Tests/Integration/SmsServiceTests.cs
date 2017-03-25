@@ -18,7 +18,7 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void SendSms_SendSuccessfully_Test()
         {
-            var smsService = new SmsService(new FakeOdorikCredentials());
+            var smsService = new SMSService(new FakeOdorikCredentials());
 
             var result = smsService.SendSms("5517", "00420774123456", "Testing message from unit test.");
 
@@ -31,7 +31,7 @@ namespace Odorik.Tests.Integration
         {
             var exception = Assert.Throws<OdorikException>(() =>
             {
-                var smsService = new SmsService(new FakeOdorikCredentials());
+                var smsService = new SMSService(new FakeOdorikCredentials());
                 smsService.SendSms("xxx", "00420774123456", "Testing message from unit test.");
             });
 
@@ -44,7 +44,7 @@ namespace Odorik.Tests.Integration
         {
             var exception = Assert.Throws<OdorikException>(() =>
             {
-                var smsService = new SmsService(new FakeOdorikCredentials());
+                var smsService = new SMSService(new FakeOdorikCredentials());
                 smsService.SendSms("5517", "xxx", "Testing message from unit test.");
             });
 
@@ -55,7 +55,7 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void GetAllowedSenders_ReturnCorrectSenders_Test()
         {
-            var smsService = new SmsService(new FakeOdorikCredentials());
+            var smsService = new SMSService(new FakeOdorikCredentials());
 
             var result = smsService.GetAllowedSenders();
 
@@ -66,7 +66,7 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void GetSmsList_ReturnsSomeRecords_Test()
         {
-            var smsService = new SmsService(new FakeOdorikCredentials());
+            var smsService = new SMSService(new FakeOdorikCredentials());
 
             var result = smsService.GetSentSMSs(new SMSFilter { From = DateTime.Now.AddYears(-1), To = DateTime.Now });
 

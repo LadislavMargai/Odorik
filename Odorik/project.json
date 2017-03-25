@@ -11,10 +11,11 @@
     "netstandard1.3": {}
   },
   "packOptions": {
-    "summary": "API for communicating with Odorik VOIP gateway",
-    "tags": [ "Odorik.cz", "Odorik", "Odorik API", "Odorik SDK" ],
+    "summary": "API SDK for communicating with Odorik VOIP gateway. More information and examples: https://github.com/LadislavMargai/Odorik",
+    "tags": [ "Odorik.cz", "Odorik", "Odorik API", "OdorikSDK", "SMS" ],
     "owners": [ "Ladislav Margai" ],
     "releaseNotes": "Initial release",
+    "description": "API SDK for communicating with Odorik VOIP gateway. More information and examples: https://github.com/LadislavMargai/Odorik",
     "projectUrl": "https://github.com/LadislavMargai/Odorik",
     "licenseUrl": "https://github.com/LadislavMargai/Odorik/blob/master/LICENSE",
     "requireLicenseAcceptance": false,

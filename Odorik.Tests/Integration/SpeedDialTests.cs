@@ -17,7 +17,7 @@ namespace Odorik.Tests.Integration
         {
             var speedDialService = new SpeedDialService(new FakeOdorikCredentials());
 
-            var result = speedDialService.GetSpeedDialList();
+            var result = speedDialService.GetSpeedDials();
 
             Assert.IsTrue(result.Any());
         }

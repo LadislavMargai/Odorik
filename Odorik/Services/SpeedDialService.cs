@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+
 using Odorik.Infrastructure;
 using Odorik.Models.SpeedDial;
 
 namespace Odorik.Services
 {
-    public class SpeedDialService : BaseService
+    /// <summary>
+    /// Speeddial service.
+    /// </summary>
+    public class SpeedDialService : BaseService, ISpeedDialService
     {
         #region "API resources"
 
@@ -27,7 +31,7 @@ namespace Odorik.Services
         /// </summary>
         /// <returns>Collection of <see cref="SpeedDial"/></returns>
         /// <exception cref="OdorikException">Throws when Odorik.cz refuses to get SpeedDials. See <see cref="OdorikException.MessageCode" /> for details.</exception>
-        public IEnumerable<SpeedDial> GetSpeedDialList()
+        public IEnumerable<SpeedDial> GetSpeedDials()
         {
             using (var client = new OdorikClient(Credentials))
             {

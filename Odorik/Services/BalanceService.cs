@@ -2,7 +2,10 @@
 
 namespace Odorik.Services
 {
-    public class BalanceService : BaseService
+    /// <summary>
+    /// Balance service.
+    /// </summary>
+    public class BalanceService : BaseService, IBalanceService
     {
         #region "API resources"
 
