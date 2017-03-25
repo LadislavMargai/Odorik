@@ -22,7 +22,7 @@ ISMSService smsService = new SMSService();
 var allowedSenders = smsService.GetAllowedSenders();
 var sentSMS = smsService.GetSentSMSs(new SMSFilter { From = DateTime.MinValue, To = DateTime.Now });
 
-smsService.SendSms(allowedSenders.First(), "{recipient number in format 00xxxx...}", "Message text");
+smsService.SendSms(allowedSenders.First(), "{Recipient number in format 00xxxx...}", "Message text");
 ```
 ## Credit service
 ```csharp
@@ -31,7 +31,7 @@ ICreditService creditService = new CreditService();
 var actualBalance = creditService.GetBalance();
 ```
 
-# Speeddial service
+## Speeddial service
 ```csharp
 ISpeedDialService speedDialService = new SpeedDialService();
 
