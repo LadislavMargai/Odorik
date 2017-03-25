@@ -31,10 +31,10 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void SendSms_InvalidSender_Test()
         {
-            var exception = Assert.Throws<OdorikException>(() =>
+            var exception = Assert.ThrowsAsync<OdorikException>(async () =>
             {
                 var smsService = new SMSService(new FakeOdorikCredentials());
-                var result = smsService.SendSmsAsync("xxx", "00420774123456", "Testing message from unit test.").Result;
+                await smsService.SendSmsAsync("xxx", "00420774123456", "Testing message from unit test.");
             });
 
             Assert.AreEqual("error forbidden_sender", exception.MessageCode);
@@ -44,10 +44,10 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void SendSms_InvalidRecipient_Test()
         {
-            var exception = Assert.Throws<OdorikException>(() =>
+            var exception = Assert.ThrowsAsync<OdorikException>(async () =>
             {
                 var smsService = new SMSService(new FakeOdorikCredentials());
-                var result = smsService.SendSmsAsync("5517", "xxx", "Testing message from unit test.").Result;
+                await smsService.SendSmsAsync("5517", "xxx", "Testing message from unit test.");
             });
 
             Assert.AreEqual("error unsupported_recipient", exception.MessageCode);
