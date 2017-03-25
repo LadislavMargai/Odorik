@@ -19,23 +19,23 @@ OdorikConfiguration.SetCredentials("https://www.odorik.cz/api/v1/", "{user}", "{
 ```csharp  
 ISMSService smsService = new SMSService();
 
-var allowedSenders = smsService.GetAllowedSenders();
-var sentSMS = smsService.GetSentSMSs(new SMSFilter { From = DateTime.MinValue, To = DateTime.Now });
+var allowedSenders = await smsService.GetAllowedSendersAsync();
+var sentSMS = await smsService.GetSentSMSsAsync(new SMSFilter { From = DateTime.MinValue, To = DateTime.Now });
 
-smsService.SendSms(allowedSenders.First(), "{Recipient number in format 00xxxx...}", "Message text");
+await smsService.SendSmsAsync(allowedSenders.First(), "{Recipient number in format 00xxxx...}", "Message text");
 ```
 ## Credit service
 ```csharp
 ICreditService creditService = new CreditService();
 
-var actualBalance = creditService.GetBalance();
+var actualBalance = await creditService.GetBalanceAsync();
 ```
 
 ## Speeddial service
 ```csharp
 ISpeedDialService speedDialService = new SpeedDialService();
 
-var speedDials = speedDialService.GetSpeedDials();
+var speedDials = await speedDialService.GetSpeedDialsAsync();
 ```
 # Releases
 * 1.0 - Initial release
