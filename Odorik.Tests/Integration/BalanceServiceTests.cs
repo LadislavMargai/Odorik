@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Threading.Tasks;
+
+using NUnit.Framework;
 
 using Odorik.Services;
 
@@ -11,11 +13,11 @@ namespace Odorik.Tests.Integration
     public class BalanceServiceTests
     {
         [TestCase]
-        public void GetBalance_ReturnsPositiveNumber_Test()
+        public async Task GetBalance_ReturnsPositiveNumber_Test()
         {
             var creditService = new CreditService(new FakeOdorikCredentials());
 
-            var result = creditService.GetBalance();
+            var result = await creditService.GetBalanceAsync();
 
             Assert.IsTrue(result > 0);
         }

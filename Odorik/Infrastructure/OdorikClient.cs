@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Odorik.Infrastructure
 {
@@ -46,13 +47,13 @@ namespace Odorik.Infrastructure
         /// <param name="identifier">Api resource identifier.</param>
         /// <returns>String response.</returns>
         /// <exception cref="WebException">Throws exception when communication failed.</exception>
-        public string Post(object obj, string identifier)
+        public Task<string> PostAsync(object obj, string identifier)
         {
             var response = _client.PostAsync(AppendObjectInUrl(identifier, obj), new StringContent(string.Empty)).Result;
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result;
+                return response.Content.ReadAsStringAsync();
             }
 
             throw new WebException($"Communication with remote server failed. Status code: {response.StatusCode}");
@@ -66,13 +67,13 @@ namespace Odorik.Infrastructure
         /// <param name="identifier">Api resource identifier.</param>
         /// <returns>String response.</returns>
         /// <exception cref="WebException">Throws exception when communication failed.</exception>
-        public string Get(object obj, string identifier)
+        public Task<string> GetAsync(object obj, string identifier)
         {
             var response = _client.GetAsync(AppendObjectInUrl(identifier, obj)).Result;
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result;
+                return response.Content.ReadAsStringAsync();
             }
 
             throw new WebException($"Communication with remote server failed. Status code: {response.StatusCode}");

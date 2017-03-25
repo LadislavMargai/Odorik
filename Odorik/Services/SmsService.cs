@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
 
 using Odorik.Infrastructure;
 using Odorik.Models.Sms;
@@ -35,11 +36,11 @@ namespace Odorik.Services
         /// Gets allowed senders for <see cref="NewSMS.Sender"/>.
         /// </summary>
         /// <returns>Collection of allowed senders.</returns>
-        public IEnumerable<string> GetAllowedSenders()
+        public async Task<IEnumerable<string>> GetAllowedSendersAsync()
         {
             using (var client = new OdorikClient(Credentials))
             {
-                var result = client.Get(null, AllowedSenders);
+                var result = await client.GetAsync(null, AllowedSenders);
 
                 return result.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             }
@@ -49,12 +50,12 @@ namespace Odorik.Services
         /// <summary>
         /// Sends a new SMS message.
         /// </summary>
-        /// <param name="sender">Sender must be one of the allowed senders from <see cref="GetAllowedSenders"/></param>
+        /// <param name="sender">Sender must be one of the allowed senders from <see cref="GetAllowedSendersAsync"/></param>
         /// <param name="recipient">Recipient number in format 00xxxx, for example 00420 123 456 789</param>
         /// <param name="message">Text of message</param>
         /// <returns>Returns remaining credit.</returns>
         /// <exception cref="OdorikException">Throws when Odorik.cz refuses to send SMS. See <see cref="OdorikException.MessageCode" /> for details.</exception>
-        public double SendSms(string sender, string recipient, string message)
+        public async Task<double> SendSmsAsync(string sender, string recipient, string message)
         {
             var sms = new NewSMS
             {
@@ -65,7 +66,7 @@ namespace Odorik.Services
 
             using (var client = new OdorikClient(Credentials))
             {
-                var result = client.Post(sms, SendSMS);
+                var result = await client.PostAsync(sms, SendSMS);
 
                 if (result.Contains(SmsSuccessfullySendFlag))
                 {
@@ -84,11 +85,11 @@ namespace Odorik.Services
         /// <param name="filter"><see cref="SMSFilter"/> contains From and To limitation</param>
         /// <returns>Collection of <see cref="SentSMS"/></returns>
         /// <exception cref="OdorikException">Throws when Odorik.cz refuses to get SMSs. See <see cref="OdorikException.MessageCode" /> for details.</exception>
-        public IEnumerable<SentSMS> GetSentSMSs(SMSFilter filter)
+        public async Task<IEnumerable<SentSMS>> GetSentSMSsAsync(SMSFilter filter)
         {
             using (var client = new OdorikClient(Credentials))
             {
-                var result = client.Get(filter, SentSMS);
+                var result = await client.GetAsync(filter, SentSMS);
 
                 return DeserializeResult<IEnumerable<SentSMS>>(result);
             }

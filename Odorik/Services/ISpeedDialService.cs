@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Odorik.Infrastructure;
 using Odorik.Models.SpeedDial;
@@ -15,6 +16,6 @@ namespace Odorik.Services
         /// </summary>
         /// <returns>Collection of <see cref="SpeedDial"/></returns>
         /// <exception cref="OdorikException">Throws when Odorik.cz refuses to get SpeedDials. See <see cref="OdorikException.MessageCode" /> for details.</exception>
-        IEnumerable<SpeedDial> GetSpeedDials();
+        Task<IEnumerable<SpeedDial>> GetSpeedDialsAsync();
     }
 }

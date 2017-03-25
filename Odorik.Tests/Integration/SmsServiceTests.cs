@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 using NUnit.Framework;
+
 using Odorik.Infrastructure;
 using Odorik.Models.Sms;
 using Odorik.Services;
@@ -16,11 +18,11 @@ namespace Odorik.Tests.Integration
     {
         [Ignore("Too expensive :-) - only manual test run")]
         [TestCase]
-        public void SendSms_SendSuccessfully_Test()
+        public async Task SendSms_SendSuccessfully_Test()
         {
             var smsService = new SMSService(new FakeOdorikCredentials());
 
-            var result = smsService.SendSms("5517", "00420774123456", "Testing message from unit test.");
+            var result = await smsService.SendSmsAsync("5517", "00420774123456", "Testing message from unit test.");
 
             Assert.IsTrue(result > 0);
         }
@@ -29,10 +31,10 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void SendSms_InvalidSender_Test()
         {
-            var exception = Assert.Throws<OdorikException>(() =>
+            var exception = Assert.Throws<OdorikException>(async () =>
             {
                 var smsService = new SMSService(new FakeOdorikCredentials());
-                smsService.SendSms("xxx", "00420774123456", "Testing message from unit test.");
+                await smsService.SendSmsAsync("xxx", "00420774123456", "Testing message from unit test.");
             });
 
             Assert.AreEqual("error forbidden_sender", exception.MessageCode);
@@ -42,10 +44,10 @@ namespace Odorik.Tests.Integration
         [TestCase]
         public void SendSms_InvalidRecipient_Test()
         {
-            var exception = Assert.Throws<OdorikException>(() =>
+            var exception = Assert.Throws<OdorikException>(async () =>
             {
                 var smsService = new SMSService(new FakeOdorikCredentials());
-                smsService.SendSms("5517", "xxx", "Testing message from unit test.");
+                await smsService.SendSmsAsync("5517", "xxx", "Testing message from unit test.");
             });
 
             Assert.AreEqual("error unsupported_recipient", exception.MessageCode);
@@ -53,22 +55,22 @@ namespace Odorik.Tests.Integration
 
 
         [TestCase]
-        public void GetAllowedSenders_ReturnCorrectSenders_Test()
+        public async Task GetAllowedSenders_ReturnCorrectSenders_Test()
         {
             var smsService = new SMSService(new FakeOdorikCredentials());
 
-            var result = smsService.GetAllowedSenders();
+            var result = await smsService.GetAllowedSendersAsync();
 
             Assert.IsTrue(result.Any());
         }
 
 
         [TestCase]
-        public void GetSmsList_ReturnsSomeRecords_Test()
+        public async Task GetSmsList_ReturnsSomeRecords_Test()
         {
             var smsService = new SMSService(new FakeOdorikCredentials());
 
-            var result = smsService.GetSentSMSs(new SMSFilter { From = DateTime.Now.AddYears(-1), To = DateTime.Now });
+            var result = await smsService.GetSentSMSsAsync(new SMSFilter { From = DateTime.Now.AddYears(-1), To = DateTime.Now });
 
             Assert.IsTrue(result.Any());
         }

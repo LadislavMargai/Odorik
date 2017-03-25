@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 
 using NUnit.Framework;
 
@@ -13,11 +14,11 @@ namespace Odorik.Tests.Integration
     public class SpeedDialTests
     {
         [TestCase]
-        public void GetSpeedDialList_ReturnsExactRecords_Test()
+        public async Task GetSpeedDialList_ReturnsExactRecords_Test()
         {
             var speedDialService = new SpeedDialService(new FakeOdorikCredentials());
 
-            var result = speedDialService.GetSpeedDials();
+            var result = await speedDialService.GetSpeedDialsAsync();
 
             Assert.IsTrue(result.Any());
         }

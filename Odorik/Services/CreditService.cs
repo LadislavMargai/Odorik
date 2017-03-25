@@ -1,4 +1,5 @@
-﻿using Odorik.Infrastructure;
+﻿using System.Threading.Tasks;
+using Odorik.Infrastructure;
 
 namespace Odorik.Services
 {
@@ -28,11 +29,11 @@ namespace Odorik.Services
         /// </summary>
         /// <returns>Actual account balance.</returns>
         /// <exception cref="OdorikException">Throws when Odorik.cz refuses to get actual account balance. See <see cref="OdorikException.MessageCode" /> for details.</exception>
-        public double GetBalance()
+        public async Task<double> GetBalanceAsync()
         {
             using (var client = new OdorikClient(Credentials))
             {
-                var result = client.Get(null, Credit);
+                var result = await client.GetAsync(null, Credit);
 
                 return DeserializeResult<double>(result);
             }
