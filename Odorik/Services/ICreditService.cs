@@ -3,9 +3,9 @@
 namespace Odorik.Services
 {
     /// <summary>
-    /// Defines contract with <see cref="BalanceService"/>.
+    /// Defines contract with <see cref="CreditService"/>.
     /// </summary>
-    public interface IBalanceService
+    public interface ICreditService
     {
         /// <summary>
         /// Gets actual balance.

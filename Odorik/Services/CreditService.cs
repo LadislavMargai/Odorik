@@ -3,9 +3,9 @@
 namespace Odorik.Services
 {
     /// <summary>
-    /// Balance service.
+    /// Credit service.
     /// </summary>
-    public class BalanceService : BaseService, IBalanceService
+    public class CreditService : BaseService, ICreditService
     {
         #region "API resources"
 
@@ -20,7 +20,7 @@ namespace Odorik.Services
         /// Constructor. If are not specified <paramref name="credentials"/>, they are retrieved from <see cref="OdorikConfiguration.Credentials" />. 
         /// </summary>
         /// <param name="credentials">Credentials.</param>
-        public BalanceService(IOdorikCredentials credentials = null) : base(credentials) { }
+        public CreditService(IOdorikCredentials credentials = null) : base(credentials) { }
 
 
         /// <summary>
