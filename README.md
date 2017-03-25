@@ -39,3 +39,4 @@ var speedDials = speedDialService.GetSpeedDials();
 ```
 # Releases
 * 1.0 - Initial release
+* 1.1 - Async support

@@ -29,7 +29,7 @@ namespace Odorik.Tests.Integration
 
 
         [TestCase]
-        public void SendSms_InvalidSender_Test()
+        public async Task SendSms_InvalidSender_Test()
         {
             var exception = Assert.Throws<OdorikException>(async () =>
             {
@@ -42,7 +42,7 @@ namespace Odorik.Tests.Integration
 
 
         [TestCase]
-        public void SendSms_InvalidRecipient_Test()
+        public async Task SendSms_InvalidRecipient_Test()
         {
             var exception = Assert.Throws<OdorikException>(async () =>
             {
