@@ -37,3 +37,5 @@ ISpeedDialService speedDialService = new SpeedDialService();
 
 var speedDials = speedDialService.GetSpeedDials();
 ```
+# Releases
+* 1.0 - Initial release
